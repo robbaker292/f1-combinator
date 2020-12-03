@@ -2,6 +2,7 @@ import csv
 import pprint
 import functools
 import itertools
+import sys
 
 pp = pprint.PrettyPrinter(indent=4, depth=3)
 
@@ -80,7 +81,7 @@ def formatTotalLengthWins(totalLengthWins):
 
 
 #read the spreadsheet
-with open('results.csv', newline='') as csvfile:
+with open(sys.argv[1], newline='') as csvfile:
 	resultsreader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
 	for row in resultsreader:
 		race = row['race']
