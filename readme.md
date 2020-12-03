@@ -3,6 +3,8 @@ Inspired by Chain Bear's [2019 Remixed! - The 27399 ways Max Verstappen could wi
 
 The premise is that the F1 season is instead made up of a subset of the normal. Depending on which races are chosen, who would win?
 
+For example, if the 2020 season was just 1 race long, there's (as of the Bahrain GP) 15 possible seasons, with Hamilton winning 11 of them, Bottas 2, and Verstappen & Gasly one each. What about if the season was two races long? There's 101 of these, with Hamilton winning 80, Bottas 17, Gasly, 3 and Verstappen still 1. And so on.
+
 Run `python3 f1.py`. This will print an update followed by the first 10 wins encountered by each driver (this should show some interesting seasons), the totals for each driver grouped by season length and finally the total championship wins.
 
 As of the Bahrain GP, the results are as follows:
