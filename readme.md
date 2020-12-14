@@ -23,7 +23,6 @@ The results are as follows:
 Another dominant season for Hamilton!
 
 Interestingly, both Sainz, Stroll and Ocon all win championships despite not winning a race.
-Sainz (5) and Perez (8) win four-race championships, along with the top 3.
 
 | Driver | Wins |
 | -- | -- | 
@@ -33,6 +32,28 @@ Sainz (5) and Perez (8) win four-race championships, along with the top 3.
 | **Stroll** | `Italy, Sakhir` and one of `Spain, Hungary, 70th Anniversary, or Styria` |
 | **Ocon** | `Belgium, Sakhir` or `Britain, Sakhir` |
 
-No-one other than Hamilton can win a season of 10 or more races.
+
+Sainz (5) and Perez (8) win four-race championships, along with the top 3.
+No-one other than Hamilton can win a season of 10 or more races, while Stroll can only win a three-race season.
+
+| Season Length | HAM | BOT | VER | PER | SAI | GAS | STR | OCO |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| 1 | 11 | 2 | 2 | 1 | - | 1 | - | - |
+| 2 | 84 | 19 | 7 | 11 | 1 | 4 | - | 2 | 
+| 3 | 559 | 66 | 26 | 12 | 6 | - | 4 | - |
+| 4 | 2132 | 181 | 48 | 8 | 5 | - | - | - |
+| 5 | 5813 | 307 | 62 | - | - | - | - | - |
+| 6 | 11998 | 346 | 32 | - | - | - | - | - |
+| 7 | 19171 | 273 | 4 | - | - | - | - | - |
+| 8 | 24168 | 142 | - | - | - | - | - | - |
+| 9 | 24257 | 53 | - | - | - | - | - | - |
+| 10 | 19448 | - | - | - | - | - | - | - |
+| 11 | 12376 | - | - | - | - | - | - | - |
+| 12 | 6188 | - | - | - | - | - | - | - |
+| 13 | 2380 | - | - | - | - | - | - | - |
+| 14 | 680 | - | - | - | - | - | - | - |
+| 15 | 136 | - | - | - | - | - | - | - |
+| 16 | 17 | - | - | - | - | - | - | - |
+| 17 | 1 | - | - | - | - | - | - | - |
 
 There are 27 ties, which are where the points and countbacks between the top two drivers are the same.
