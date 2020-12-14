@@ -22,8 +22,8 @@ The results are as follows:
 
 Another dominant season for Hamilton!
 
-Interestingly, both Sainz, Stroll and Ocon all win championships depsite not winning a race.
-Sainz (5) and Perez (8) win faour-race championships, along with the top 3.
+Interestingly, both Sainz, Stroll and Ocon all win championships despite not winning a race.
+Sainz (5) and Perez (8) win four-race championships, along with the top 3.
 
 | Driver | Wins |
 | -- | -- | 
