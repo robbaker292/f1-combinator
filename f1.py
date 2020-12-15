@@ -13,18 +13,21 @@ unusualWins = []
 
 #current F1 points - could update this for other points systems
 points = [25,18,15,12,10,8,6,4,2,1]
+# pre 2010 points
+#points = [10, 8, 6, 5, 4, 3, 2, 1]
+
 
 # convert the finishing position from the spreadsheet into a number of points
 def formatPosition(position):
 	if position == "DNF" :
 		return (0, 21) # consider a DNF (or DNS, etc) to be a 21st place
 	if position[-1] == "F" :
-		if int(position[:-1]) > 10 :
+		if int(position[:-1]) > len(points) :
 			return (0, int(position[:-1]))
 		else :
 			return (points[int(position[:-1])-1] + 1, int(position[:-1]) )
 	else :
-		if int(position) > 10 :
+		if int(position) > len(points) :
 			return (0, int(position))
 		else :
 			return (points[int(position)-1], int(position))
