@@ -26,7 +26,7 @@ def formatPosition(position):
 	else :
 		if int(position) > 10 :
 			return (0, int(position))
-		else :			
+		else :
 			return (points[int(position)-1], int(position))
 
 # calculate the total number of points per driver for the given season
@@ -40,7 +40,7 @@ def calculateRankings(combination, results):
 				seasonResults[car] = {'points' : points, 'places' : [0]*21}
 				seasonResults[car]['places'][place-1] = 1
 			else :
-				seasonResults[car]['points'] += points				
+				seasonResults[car]['points'] += points
 				seasonResults[car]['places'][place-1] += 1
 	return seasonResults
 
@@ -85,7 +85,7 @@ with open(sys.argv[1], newline='') as csvfile:
 	resultsreader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
 	for row in resultsreader:
 		race = row['race']
-		row.pop("race")	
+		row.pop("race")
 		results[race] = {k:formatPosition(v) for (k,v) in row.items()}
 		cars |= row.keys()
 		races.add(race)
@@ -94,11 +94,16 @@ with open(sys.argv[1], newline='') as csvfile:
 totalWins = {k:0 for k in cars}
 totalLengthWins = [totalWins.copy() for i in range(0,len(results))]
 ties = 0
-		
+
 #just for testing
 print(races)
 print(cars)
 print(len(totalLengthWins))
+driverList = list(cars)
+
+with open('allseasons.csv', 'w', newline='') as csvfile:
+	csvwriter = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+	csvwriter.writerow(["comb"] + driverList)
 
 # create a number of seasons ranging from 1 race long to the full season
 for i in range(1,len(results)+1) :
@@ -119,8 +124,20 @@ for i in range(1,len(results)+1) :
 			#store the first 10 wins for each driver - this will show some interesting results
 			# e.g. all the seasons Gasly won
 			# Should save memory rather than saving all the results
-			if totalWins[sortedResults[0][0]] < 10 :
-				unusualWins.append((sortedResults[0][0], comb))
+			#if totalWins[sortedResults[0][0]] < 10 :
+			#	unusualWins.append((sortedResults[0][0], comb))
+			#if driver in ('SAI', 'GAS', 'STR', 'OCO'):
+			#	unusualWins.append((sortedResults[0][0], comb))
+
+		outputArr = [0] * (len(driverList)+1)
+		outputArr[0] = "-".join(comb)
+		for d in sortedResults :
+			#print(driverList.index(d[0]), d[1]['points'])
+			outputArr[driverList.index(d[0])+1] = d[1]['points']
+		#print(outputArr)
+		with open('allseasons.csv', 'a', newline='') as csvfile:
+			csvwriter = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+			csvwriter.writerow(outputArr)
 
 	print("Completed " + str(len(combinations)) + " seasons of length: " + str(i))
 
