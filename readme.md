@@ -10,7 +10,7 @@ Run `python3 f1.py results.csv`. This will print an update followed by the first
 The results are as follows:
 | Driver | Championships | Percentage |
 | --| -- | -- |
-| **Hamilton** | 6129419 | 98.74 |
+| **Hamilton** | 129419 | 98.74 |
 | **Bottas** | 1389 | 1.06 |
 | **Verstappen** | 181 | 0.14 |
 | **Perez** | 32 | 0.02 |
