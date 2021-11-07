@@ -5,7 +5,7 @@ The premise is that the F1 season is instead made up of a subset of the normal. 
 
 For example, if the 2020 season was just 1 race long, there's 17 possible seasons, with Hamilton winning 11 of them, Bottas and Verstappen 2, and Perez & Gasly one each. What about if the season was five races long? There's 6188 of these, with Hamilton winning 5813, Bottas 307, and Verstappen 62. And so on.
 
-Run `python3 f1.py results.csv`. This will print an update followed by the first 10 wins encountered by each driver (this should show some interesting seasons), the totals for each driver grouped by season length and finally the total championship wins.
+Run `python3 f1.py 2020.csv`. This will print an update followed by the first 10 wins encountered by each driver (this should show some interesting seasons), the totals for each driver grouped by season length and finally the total championship wins.
 
 The results are as follows:
 | Driver | Championships | Percentage |

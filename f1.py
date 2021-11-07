@@ -3,6 +3,7 @@ import pprint
 import functools
 import itertools
 import sys
+import re
 
 pp = pprint.PrettyPrinter(indent=4, depth=3)
 
@@ -19,18 +20,36 @@ points = [25,18,15,12,10,8,6,4,2,1]
 
 # convert the finishing position from the spreadsheet into a number of points
 def formatPosition(position):
-	if position == "DNF" :
-		return (0, 21) # consider a DNF (or DNS, etc) to be a 21st place
-	if position[-1] == "F" :
-		if int(position[:-1]) > len(points) :
-			return (0, int(position[:-1]))
+	if "DNF" in position:
+		# consider a DNF (or DNS, etc) to be a 21st place
+		point = 0
+		positionInt = 21
+	else:
+		#extract position
+		positionInt = int(re.findall(r'[0-9]+', position)[0])
+		if int(positionInt) > len(points) :
+			point = 0
 		else :
-			return (points[int(position[:-1])-1] + 1, int(position[:-1]) )
-	else :
-		if int(position) > len(points) :
-			return (0, int(position))
-		else :
-			return (points[int(position)-1], int(position))
+			point = points[positionInt-1]
+			
+		#fastest lap  
+		if "F" in position:
+			#only in top 10
+			if (positionInt <= len(points)):
+				point = point + 1
+		 
+	#half points
+	if "H" in position:
+		point = point / 2
+	
+	if "SF" in position:
+		point = point + 3
+	if "SS" in position:
+		point = point + 2
+	if "ST" in position:
+		point = point + 1
+		
+	return (point, positionInt)
 
 # calculate the total number of points per driver for the given season
 def calculateRankings(combination, results):
